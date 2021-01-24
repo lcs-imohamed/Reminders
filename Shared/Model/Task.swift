@@ -8,11 +8,19 @@
 import Foundation
 
 //Create structure task with variables and that is identifiable
-struct Task: Identifable {
-    var id = UUID
+class Task: Identifiable, ObservableObject {
+    var id = UUID()
     var description: String
     var priority: TaskPriority
-    var completed: Bool
+    @Published var completed: Bool
+    
+    internal init(id: UUID = UUID(), description: String, priority: TaskPriority, completed: Bool) {
+        self.id = id
+        self.description = description
+        self.priority = priority
+        self.completed = completed
+    }
+    
 }
 
 //Make instance of array

@@ -8,8 +8,8 @@
 import Foundation
 
 //Defines type with possible values
-enum TaskPriority {
-    case high
-    case medium
-    case low
+enum TaskPriority: String {
+    case high = "High"
+    case medium = "Medium"
+    case low = "Low"
 }

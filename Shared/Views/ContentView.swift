@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    //Stores all tasks that are being tacked
+  
+    
+    //Stores all tasks that are being tracked
     @ObservedObject var store: TaskStore
     
     // controls whether the add task is showing
@@ -29,7 +31,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showingAddTask) {
-            AddTask(showing: $showingAddTask)
+            AddTask(store: store, showing: $showingAddTask)
         }
     }
 }
